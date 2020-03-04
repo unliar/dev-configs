@@ -7,8 +7,8 @@
 happysooner.com {
     log {
        output file /var/log/happysooner.log {
-		    roll_size 1gb
 		    roll_keep 5
+            roll_keep_for 10
 	    }
     }
     reverse_proxy / http://0.0.0.0:3001 
@@ -30,8 +30,8 @@ consul.happysooner.com {
 hipoor.com {
     log {
        output file /var/log/hipoor.log {
-		    roll_size 1gb
-		    roll_keep 5
+		    roll_keep 5 
+            roll_keep_for 10
 	    }
     }
     reverse_proxy / http://0.0.0.0:2666 
