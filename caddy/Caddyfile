@@ -1,0 +1,72 @@
+# 主站点
+happysooner.com {
+    log access_log.log # 日志
+    gzip # 压缩
+    proxy / http://0.0.0.0:3001 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+    proxy /api http://0.0.0.0:8088 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+    proxy /resume http://0.0.0.0:2777/ {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
+# 容器管理平台
+portainer.happysooner.com {
+    log access_log.log # 日志
+    gzip # 压缩
+    proxy / http://0.0.0.0:9000 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
+# consul
+consul.happysooner.com {
+    log access_log.log # 日志
+    gzip # 压缩
+    proxy / http://0.0.0.0:8500 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
+# 乞讨平台
+hipoor.com {
+    log access_log.log # 日志
+    gzip # 压缩
+    proxy / http://0.0.0.0:2666 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
+# 消息队列
+nsq.happysooner.com {
+    log access_log.log # 日志
+    gzip # 压缩
+    proxy / http://0.0.0.0:4171 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-For {remote} 
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
