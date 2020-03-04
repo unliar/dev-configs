@@ -12,7 +12,8 @@ happysooner.com {
 	    }
     }
     reverse_proxy / http://0.0.0.0:3001 
-    reverse_proxy /api http://0.0.0.0:8088 
+    reverse_proxy /api http://0.0.0.0:8088
+    rewrite /resume / # 重写路径 
     reverse_proxy /resume/* http://0.0.0.0:2777
 }
 
