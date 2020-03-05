@@ -4,11 +4,10 @@
     email 370732889@qq.com
 }
 # 主站点
-happysooner.com {
+www.happysooner.com{
     log {
        output file /var/log/happysooner.log {
-		    roll_keep 5
-            roll_keep_for 10
+		    roll_keep 2
 	    }
     }
     reverse_proxy / http://0.0.0.0:3001 
