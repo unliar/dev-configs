@@ -28,17 +28,17 @@ consul.happysooner.com {
 }
 
 # 乞讨平台
-hipoor.com {
-    log {
-       output file /var/log/hipoor.log {
-		    roll_keep 5 
-            roll_keep_for 10
-	    }
-    }
-    reverse_proxy / http://0.0.0.0:2666 
-}
+# hipoor.com {
+#     log {
+#        output file /var/log/hipoor.log {
+# 		    roll_keep 5 
+#             roll_keep_for 10
+# 	    }
+#     }
+#     reverse_proxy / http://0.0.0.0:2666 
+# }
 
-# 消息队列
+
 nsq.happysooner.com {
     reverse_proxy / http://0.0.0.0:4171 
 }
