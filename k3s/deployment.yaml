@@ -17,3 +17,7 @@ spec:
           image: nginx:1.17
           ports:
             - containerPort: 80
+          resources:
+            limits: # 资源分配上限
+              memory: "128Mi" # 内存限制
+              cpu: "500m" # 限制cpu
