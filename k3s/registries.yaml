@@ -1,9 +1,5 @@
-mirrors:
-  docker.io:
-    endpoint:
-      - "http://mycustomreg.com:5000"
 configs:
-  "mycustomreg:5000":
+  "shenzhen.aliyuncs.com":
     auth:
-      username: xxxxxx # this is the registry username
-      password: xxxxxx # this is the registry password
+      username: i@x.com # this is the registry username
+      password: xxx # this is the registry password
