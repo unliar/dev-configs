@@ -1,4 +1,4 @@
-name: k3s-kubectrl
+name: k3s-kubectl
 
 on: push
 
