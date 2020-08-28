@@ -1,0 +1,16 @@
+name: k3s-kubectrl
+
+on: push
+
+jobs:
+  deploy:
+    name: deploy-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: deploy
+        uses: steebchen/kubectl@master
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          args: get pods
