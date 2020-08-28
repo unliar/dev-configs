@@ -18,6 +18,9 @@ spec:
           ports:
             - containerPort: 80
           resources:
+            #requests: # 资源分配下限
+            # cpu: "200m"
+            # memory: "128Mi"
             limits: # 资源分配上限
               memory: "128Mi" # 内存限制
               cpu: "500m" # 限制cpu
